@@ -27,11 +27,25 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
 
-  const {init} = usePuterStore();
+  // const {init} = usePuterStore();
+  //
+  // useEffect(() => {
+  //   init();
+  // }, [init]);
+
+  const init = usePuterStore((s) => s.init);
 
   useEffect(() => {
-    init();
-  }, [init]);
+    const waitForPuter = () => {
+      if (window.puter) {
+        init();
+      } else {
+        setTimeout(waitForPuter, 100);
+      }
+    };
+
+    waitForPuter();
+  }, []); //
   return (
     <html lang="en">
       <head>
@@ -39,9 +53,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <script src="https://js.puter.com/v2/"></script>
       </head>
       <body>
-      <script src="https://js.puter.com/v2/"></script>
         {children}
         <ScrollRestoration />
         <Scripts />

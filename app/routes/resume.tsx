@@ -3,6 +3,7 @@ import {usePuterStore} from "~/lib/puter";
 import {useEffect, useState} from "react";
 import ATS from "~/components/ATS";
 import Summary from "~/components/Summary";
+import Details from "~/components/Details";
 
 export const meta = () => ([
     {title:'Resumind | Review'},

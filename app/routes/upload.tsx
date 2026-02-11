@@ -76,6 +76,7 @@ const Upload = () => {
             <section className="main-section">
                 <div className="page-heading p-16">
                     <h1>Smart feedback for your dream job</h1>
+
                     {isProcessing ? (
                         <>
                             <h2>{statusText}</h2>

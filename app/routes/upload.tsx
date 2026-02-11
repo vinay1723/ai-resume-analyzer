@@ -71,7 +71,7 @@ const Upload = () => {
              handleAnalyze({companyName,jobTitle,jobDescription,file});
     }
     return (
-        <main className="bg-[url('/images/bg-main.jpg')] bg-cover">
+        <main className="bg-[url('/images/bg-main.webp')] bg-cover">
             <Navbar/>
             <section className="main-section">
                 <div className="page-heading p-16">
